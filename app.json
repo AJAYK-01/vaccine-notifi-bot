@@ -1,0 +1,25 @@
+{
+    "name": "Vaccine-Notifi-Bot",
+    "description": "A Self hostable cowin vaccine notifier bot",
+    "repository": "https://github.com/AJAYK-01/vaccine-notifi-bot",
+    "logo": "https://node-js-sample.herokuapp.com/node.png",
+    "keywords": ["python", "vaccine", "covid", "telegram"],
+    "env": {
+        "botId": {
+          "description": "The bot id from BotFather",
+          "required": true
+        },
+        "chatId": {
+          "description": "Your chatId in telegram get it from https://t.me/chatIDrobot (its a number)",
+          "required": true
+        },
+        "ageLimit": {
+            "description": "Min age limit, say if you want for 18+ slots, give less than 45 value",
+            "required": true
+        },
+        "districtId": {
+            "description": "Your district id for cowin",
+            "required": true
+        }
+    }
+  }
