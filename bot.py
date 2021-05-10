@@ -1,6 +1,3 @@
-# "https://api.telegram.org/bot"+botId+"/"+
-#         "sendMessage?chat_id="+chatId+"&"+"text="+message
-from apscheduler.schedulers.background import BackgroundScheduler
 import time
 import subprocess
 import requests

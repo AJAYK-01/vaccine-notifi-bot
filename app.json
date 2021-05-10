@@ -21,5 +21,11 @@
             "description": "Your district id for cowin",
             "required": true
         }
+    },
+    "formation": {
+        "worker": {
+          "quantity": 1,
+          "size": "free"
+        }
     }
   }

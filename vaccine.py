@@ -51,7 +51,7 @@ def check_availability(districts, debug_flag):
 
 
 if __name__ == "__main__":
-    debug = True
+    debug = False
     # if len(sys.argv) > 3:
     #     debug = sys.argv[3]
     check_availability(districts=DISTRICTS, debug_flag=debug)
