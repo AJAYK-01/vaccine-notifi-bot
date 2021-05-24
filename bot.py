@@ -26,4 +26,4 @@ def run_job():
 
 while True:
     run_job()
-    time.sleep(15)
+    time.sleep(60)
