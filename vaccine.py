@@ -4,7 +4,7 @@ from datetime import datetime, timedelta
 import requests
 from requests import RequestException
 
-URL = "https://cdn-api.co-vin.in/api/v2/appointment/sessions/public/calendarByDistrict?district_id={0}&date={1}"
+URL = "https://ec2-65-1-65-76.ap-south-1.compute.amazonaws.com/api/v2/appointment/sessions/public/calendarByDistrict?district_id={0}&date={1}"
 DISTRICTS = [sys.argv[1]]
 # search for age limit less than:
 AGE_LIMIT = int(sys.argv[2])
@@ -15,7 +15,7 @@ log.setLevel(logging.INFO)
 
 
 def print_availability(data, debug_flag):
-    for center in data['centers']:
+    for center in data['data']['centers']:
         for session in center['sessions']:
             if session['min_age_limit'] < AGE_LIMIT:
                 if debug_flag:
@@ -38,7 +38,7 @@ def check_availability(districts, debug_flag):
             try:
                 log.info("checking for district %s for date %s", district, date)
                 response = requests.get(URL.format(district, date), headers={
-                                        "user-agent": USER_AGENT})
+                                        "user-agent": USER_AGENT}, verify=False)
                 response.raise_for_status()
                 print_availability(data=response.json(), debug_flag=debug_flag)
             except RequestException as ex:

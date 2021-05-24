@@ -4,6 +4,7 @@ import requests
 import os
 
 botId = os.environ.get('botId')
+# https://t.me/chatIDrobot
 chatId = os.environ.get('chatId')
 agelimit = os.environ.get('ageLimit')
 district = os.environ.get('districtId')
